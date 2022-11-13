@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Modal Button */
+.modalButton {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(0, 0);
+  z-index: -1;
+  padding: 12px 24px;
+}
+
+/* Modal */
+.overlay {
+  background-color: #F1F1F2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 999;
+}
+
+.modalContainer {
+  padding: 50px;
+  max-width: 900px;
+  width: 100%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  text-align: left;
+  vertical-align: middle;
+  background-color: #FFFFFF;
+  /* box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75); */
+  /* border-radius: 8px; */
+}
+
+
+
+.modalRight {
+  width: 100%;
+}
+
+.closeBtn {
+  position: fixed;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.modalContainer .modal-body .modal-image img {
+  width: 100%;
+  height: auto;
+}
+.modalContainer .modal-body .product-short-details h2 {
+  margin-top: 0;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.modalContainer .modal-body .product-short-details h2 a {
+  color: #000;
+}
+
+@media (max-width: 480px) {
+  .modalContainer .modal-body .product-short-details h2 {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .modalContainer .modal-body .product-short-details h2 {
+    margin-top: 15px;
+  }
+}
+
+.modalContainer .modal-body .product-short-details .product-price {
+  font-size: 30px;
+  margin: 20px 0;
+  color:lightgray
+}
+
+@media (max-width: 480px) {
+  .modalContainer .modal-body .product-short-details .product-price {
+    margin: 10px 0;
+  }
+}
+
+.modalContainer .modal-body .product-short-details .btn-main, .modalContainer .modal-body .product-short-details .btn-solid-border, .modalContainer .modal-body .product-short-details .btn-transparent, .modalContainer .modal-body .product-short-details .btn-small {
+  margin-top: 20px;
+}
+
+.modalContainer .modal-body .product-short-details .btn-transparent {
+  color: #444;
+  border-bottom: 1px solid #dedede;
+}
+
+.btn-main, .btn-solid-border, .btn-transparent, .btn-small {
+  background: #000;
+  color: #fff;
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 14px 35px;
+  text-transform: uppercase;
+  font-weight: 200;
+  border-radius: 0;
+}
+
+.btn-main.btn-icon i, .btn-icon.btn-solid-border i, .btn-icon.btn-transparent i, .btn-icon.btn-small i {
+  font-size: 16px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.btn-main:hover, .btn-solid-border:hover, .btn-transparent:hover, .btn-small:hover {
+  background: black;
+  color: #fff;
+}
+
+.btn-solid-border {
+  border: 1px solid #000;
+  background: #fff;
+  color: #000;
+}
+
+.btn-transparent {
+  background: transparent;
+  padding: 0;
+  color: #000;
+}
+
+.btn-transparent:hover {
+  background: transparent;
+  color: #000;
+}
+
+.btn-large {
+  padding: 20px 45px;
+}
+
+.btn-large.btn-icon i {
+  font-size: 16px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.btn-small {
+  padding: 8px 25px;
+  font-size: 10px;
+}
+
+.btn-round {
+  border-radius: 4px;
+}
+
+.btn-round-full {
+  border-radius: 50px;
+}
+
+.btn.active:focus, .btn:active:focus, .btn:focus {
+  outline: 0;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 3rem;
+  padding: 1rem 2rem;
+}
+
+.btnContainer {
+  display: flex;
+  padding: 1rem 1rem;
+}
+.btnContainer button {
+  width: 100%;
+  margin: 0.5rem;
+  padding: 16px 0;
+  /* border: none; */
+  border: 1px solid #411b57;
+  /* color: #ffffff; */
+}
+
+.btnPrimary {
+  background-color: #411b57;
+  color: white;
+}
+
+.btnOutline {
+  /* background-color: #a76a99; */
+  background-color: white;
+  color: #411b57;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+@media screen and (max-width: 500px) {
+  .modalContainer {
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    height: 100vh;
+  }
+  img {
+    width: 100%;
+    max-height: 70vh;
+    object-fit: cover;
+  }
+
+  .heading {
+    margin: 1rem;
+  }
+}

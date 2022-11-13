@@ -1,0 +1,288 @@
+.page-wrapper {
+    padding: 80px;
+  }
+  .checkout .block {
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+  .billing-details, .card-form{
+    padding: 0 50px;
+  }
+  .checkout-form .form-group {
+    position: relative;
+    margin-bottom: 8px;
+  }
+  
+  .checkout-form .form-group label {
+    position: absolute;
+    top: 18px;
+    left: 15px;
+    right: auto;
+    bottom: auto;
+    color: #888;
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    opacity: 1 !important;
+    width: 85px;
+  }
+  
+  .checkout-form .form-group input {
+    border-radius: 0;
+    display: block;
+    padding: 6px 10px 5px 100px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    height: 50px;
+  }
+  
+  .checkout-form .checkout-country-code .form-group {
+    float: left;
+  }
+  
+  .checkout-form .checkout-country-code .form-group:first-child {
+    width: calc(45% - 2px);
+    margin-right: 4px;
+  }
+  
+  .checkout-form .checkout-country-code .form-group:last-child {
+    width: calc(55% - 2px);
+  }
+  .shopping .widget-title {
+    font-weight: 400;
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 16px;
+  }
+  .checkout-form .form-group {
+    position: relative;
+    margin-bottom: 8px;
+  }
+  
+  .checkout-form .form-group label {
+    position: absolute;
+    top: 18px;
+    left: 15px;
+    right: auto;
+    bottom: auto;
+    color: #888;
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    opacity: 1 !important;
+    width: 85px;
+  }
+  
+  .checkout-form .form-group input {
+    border-radius: 0;
+    display: block;
+    padding: 6px 10px 5px 100px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    height: 50px;
+  }
+  
+  .checkout-form .checkout-country-code .form-group {
+    float: left;
+  }
+  
+  .checkout-form .checkout-country-code .form-group:first-child {
+    width: calc(45% - 2px);
+    margin-right: 4px;
+  }
+  
+  .checkout-form .checkout-country-code .form-group:last-child {
+    width: calc(55% - 2px);
+  }
+  .checkout-form .form-group {
+    position: relative;
+    margin-bottom: 8px;
+  }
+  
+  .checkout-form .form-group label {
+    position: absolute;
+    top: 18px;
+    left: 15px;
+    right: auto;
+    bottom: auto;
+    color: #888;
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    opacity: 1 !important;
+    width: 85px;
+  }
+  
+  .checkout-form .form-group input {
+    border-radius: 0;
+    display: block;
+    padding: 6px 10px 5px 100px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    height: 50px;
+  }
+  
+  .checkout-form .checkout-country-code .form-group {
+    float: left;
+  }
+  
+  .checkout-form .checkout-country-code .form-group:first-child {
+    width: calc(45% - 2px);
+    margin-right: 4px;
+  }
+  
+  .checkout-form .checkout-country-code .form-group:last-child {
+    width: calc(55% - 2px);
+  }
+  .product-checkout-details .product-card > a {
+    padding-right: 20px;
+  }
+  .product-checkout-details .product-card a {
+    text-decoration: none;
+    font-weight: normal;
+  }
+  .product-checkout-details .product-card a:hover {
+    text-decoration: none;
+    color: #000
+  }
+  
+  .product-checkout-details .product-card .price {
+    margin-top: 15px;
+  }
+  
+  .product-checkout-details .product-card .media-object {
+    width: 80px;
+  }
+  
+  .product-checkout-details {
+   color: #000;
+   padding: 10px;
+  }
+  .product-checkout-details .block .product-card .media-body h4 {
+    font-weight: 400;
+    font-size: 14px;
+    color: #000;
+  }
+  .product-checkout-details .block .product-card .media-body h4 a{
+    color: #000;
+  }
+  .product-checkout-details .widget-title {
+    font-weight: 400;
+    font-size: 24px;
+    color: #000;
+    border-bottom: 1px solid #555;
+    margin-bottom: 10px;
+  }
+  
+  .product-checkout-details .product-card .remove {
+    font-size: 16px;
+    cursor: pointer;
+    align-items: center;
+  }
+  
+  .product-checkout-details .product-card {
+    display: flex;
+    margin-bottom: 5px;
+    color: #555 !important
+  }
+  
+  .product-checkout-details .discount-code {
+    border-top: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+    margin: 20px 0 10px;
+    padding: 10px 0;
+  }
+  
+  .product-checkout-details .discount-code p {
+    margin: 0;
+  }
+  
+  .product-checkout-details .discount-code p a {
+    font-weight: 400;
+    color: #555;
+  }
+  
+  .product-checkout-details .summary-prices {
+    border-style: solid;
+    border-color: #dedede;
+    border-width: 0px 0 1px 0;
+    padding-bottom: 10px;
+    color:#000
+  }
+  
+  .product-checkout-details .summary-prices li {
+    padding: 5px 0;
+    color:#000
+  }
+  
+  .product-checkout-details .summary-prices li span + span {
+    float: right;
+  }
+  
+  .product-checkout-details .summary-total {
+    margin-top: 5px;
+  }
+  
+  .product-checkout-details .summary-total > span {
+    font-weight: 500;
+    font-size: 18px;
+  }
+  
+  .product-checkout-details .summary-total span + span {
+    float: right;
+  }
+  
+  .product-checkout-details .verified-icon {
+    margin-top: 25px;
+  }
+  
+  .product-checkout-details .verified-icon img {
+    width: 100%;
+  }
+  .product-checkout-details .discount-code {
+    border-top: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+    margin: 20px 0 10px;
+    padding: 10px 0;
+  }
+  
+  .product-checkout-details .discount-code p {
+    margin: 0;
+  }
+  
+  .product-checkout-details .discount-code p a {
+    font-weight: 400;
+    color: #555;
+  }
+  .product-checkout-details .summary-prices {
+    border-style: solid;
+    border-color: #dedede;
+    border-width: 0px 0 1px 0;
+    padding-bottom: 10px;
+  }
+  
+  .product-checkout-details .summary-prices li {
+    padding: 0;
+  }
+  .product-checkout-details .summary-prices li {
+    padding: 0;
+  }
+
+  .product-checkout-details .summary-prices li span + span {
+    float: right;
+  }
+
+  .cart-total ul{
+    padding: 0px;
+  }
+  .cart-total .verified-icon{
+   margin:  0 auto;
+   margin-top: 10px;
+  }
+  .cart-total .verified-icon img{
+   width: 80%;
+   margin:  0 auto;
+  }
