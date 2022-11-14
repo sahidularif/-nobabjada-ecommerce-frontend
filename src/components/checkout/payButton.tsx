@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks/useTypeSelector";
-import { clearCart } from "../../redux/reducer/cartSlice";
 // import { clearCart } from "../../redux/reducer/cartSlice";
 
 const PayButton = () => {
@@ -11,7 +10,7 @@ const PayButton = () => {
   const handleCheckout = () => {
     console.log(products)
     axios
-      .post(`http://localhost:5000/stripe/create-checkout-session`, {
+      .post(`https://nobabjada-ecommerce.onrender.com/stripe/create-checkout-session`, {
         products,
         userId: user?.id,
       })
