@@ -9,7 +9,7 @@ import { LoginUser } from '../models/LoginUser.interface';
 import { NewUser } from '../models/NewUser';
 
 //Base Url
-const API_URL = "https://nobabjada-ecommerce.onrender.com/auth/"
+const API_URL = "http://localhost:5000/auth/"
 
 // User Registration
 const register = async (newUser: NewUser): Promise<DisplayUser | null> => {

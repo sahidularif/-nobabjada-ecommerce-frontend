@@ -10,7 +10,7 @@ const PayButton = () => {
   const handleCheckout = () => {
     console.log(products)
     axios
-      .post(`https://nobabjada-ecommerce.onrender.com/stripe/create-checkout-session`, {
+      .post(`https://nobabjada-ecommerce.onrender.com/stripe/checkout`, {
         products,
         userId: user?.id,
       })
