@@ -669,9 +669,16 @@ svg {
   border: 1px solid black;
   color: black;
 }
-
+.products-wrapper{
+  background-color: #fff;
+  padding: 25px;
+}
 .product-item {
   margin-bottom: 30px;
+}
+.pd-table-wr{
+  background-color: #fff;
+  padding: 25px;
 }
 
 .product-item .product-thumb {

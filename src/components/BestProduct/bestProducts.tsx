@@ -1,6 +1,6 @@
 import React, { FC, } from "react";
 import Modal from "../modal/Modal";
-import { Product, TProduct } from "../../redux/reducer/productSlice";
+import { Product, TProduct, fetchProducts } from "../../redux/reducer/productSlice";
 import { useAppDispatch, useAppSelector,} from "../../redux/hooks/useTypeSelector";
 import { addProductToCart } from "../../redux/reducer/cartSlice";
 import { Link } from "react-router-dom";
@@ -16,11 +16,10 @@ const BestProducts: FC = () => {
   const { loading, data } = useAppSelector((state) => state.product);
   const { products } = useAppSelector((state) => state.cart);
   const [modalData, setModalData] = React.useState<Product>({
-    id: 0,
+    _id: '',
     title: '',
     description: '',
     color: {},
-    size: {},
     price:0,
     img_url:''
   })
@@ -30,7 +29,10 @@ const BestProducts: FC = () => {
   const addToCart = (product: Product) => {
     dispatch(addProductToCart({product:product}));
   };
-console.log(modalData)
+  React.useEffect(()=>{
+    dispatch(fetchProducts())
+  }, [])
+console.log(data)
   return (
     <section className="products section"
     // onClick={handleOuterClick}
@@ -39,10 +41,10 @@ console.log(modalData)
       <div className="container">
         
         <div className="row">
-          {data?.map((pd) => {
+          {data?.map((pd, i) => {
             return (
-              
-              <div className="col-md-4">
+               
+              <div className="col-md-4" key={i}>
                 
                 <div className="product-item">
                   <div className="product-thumb">
@@ -90,13 +92,15 @@ console.log(modalData)
                     <p className="price">${pd.price}</p>
                   </div>
                 </div>
+                <Modal onClose={() => setOpenModal(false)} open={openModal} item={modalData} />
               </div>
+              
             );
           })}
         </div>
         
       </div>
-      <Modal onClose={() => setOpenModal(false)} open={openModal} item={modalData} />
+      
     </section>
   );
 };

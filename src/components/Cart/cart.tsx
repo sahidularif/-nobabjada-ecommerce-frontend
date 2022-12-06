@@ -11,7 +11,7 @@ import {
 } from "../../redux/hooks/useTypeSelector";
 import { Product } from "../../redux/reducer/productSlice";
 import { addProductToCart, clearCart, removeProductFromCart } from "../../redux/reducer/cartSlice";
-import { MdAdd, MdAddCircle, MdAddShoppingCart, MdArrowBack, MdClose, MdDelete, MdDeleteOutline, MdRemoveCircle, MdRemoveShoppingCart } from "react-icons/md";
+import { MdAddCircle,  MdArrowBack, MdClose, MdDelete, MdRemoveCircle, } from "react-icons/md";
 import { Link } from "react-router-dom";
 import '../../styles/checkout.css'
 const Cart = () => {
@@ -22,19 +22,19 @@ const Cart = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   // console.log(products);
-  const handleDeleteProduct = (pd: number) => {
-    dispatch(removeProductFromCart({ id: pd, full: true }))
+  const handleDeleteProduct = (id: string) => {
+    dispatch(removeProductFromCart({ id: id, full: true }))
   }
 
   const handleIncreaseProduct = (product: Product) => {
     dispatch(addProductToCart({ product: product }))
   }
 
-  const handleDecreaseProduct = (pd: number) => {
+  const handleDecreaseProduct = (pd: string) => {
     dispatch(removeProductFromCart({ id: pd }))
   }
   const handleClearCart = () => {
-    dispatch(clearCart({ id: products[0].id }))
+    // dispatch(clearCart({ id: products[0].id }))
   }
   return (
     <div>
@@ -94,7 +94,7 @@ const Cart = () => {
                           <span>{0}</span>&nbsp;
                           <MdAddCircle size={20} />
                         </div>
-                        <MdDelete onClick={()=> handleDeleteProduct(product.id)} />
+                        <MdDelete onClick={()=> handleDeleteProduct(product._id)} />
                       </div>
                     </div>
                   </div>

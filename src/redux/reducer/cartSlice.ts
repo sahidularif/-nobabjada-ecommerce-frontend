@@ -23,15 +23,15 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addProductToCart: (state: CartState, action: PayloadAction<{product: Product, quantity?:number}>) => {
-      const newItem = action.payload.product;
+      const newItem = action.payload?.product;
       const {product, quantity} = action.payload
       const existingItemIndex = state.products.findIndex(
-        (product) => product.id === newItem.id
+        (product) => product._id === newItem?._id
       );
 
       if (existingItemIndex !== -1) {
         state.products[existingItemIndex].quantity += 1;
-        state.totalPrice += newItem.price;
+        state.totalPrice += newItem?.price;
         localStorage.setItem('cart_item', JSON.stringify(state.products))
         localStorage.setItem('cart_total', JSON.stringify(state.totalPrice))
       } else{
@@ -47,13 +47,13 @@ const cartSlice = createSlice({
     },
     removeProductFromCart: (
       state: CartState,
-      action: PayloadAction<{ id: number; full?: boolean }>
+      action: PayloadAction<{ id: string; full?: boolean }>
     ) => {
-      const productId = action.payload.id;
+      const product_id = action.payload.id;
       const full = action.payload.full;
 
       const productIndex = state.products.findIndex(
-        (product) => product.id === productId
+        (product) => product._id === product_id
       );
 
       const currentProduct = state.products[productIndex];
@@ -67,7 +67,7 @@ const cartSlice = createSlice({
 
       if (full || state.products[productIndex].quantity <= 0) {
         state.products = state.products.filter(
-          (product) => product.id !== productId
+          (product) => product._id !== product_id
         );
         localStorage.setItem('cart_item', JSON.stringify(state.products))
       }
@@ -75,7 +75,7 @@ const cartSlice = createSlice({
       state.totalPrice -= priceToBeSubtractedFromTotal;
       localStorage.setItem('cart_total', JSON.stringify(state.totalPrice))
     },
-    clearCart(state, action: PayloadAction<{ id?: number; full?: boolean }>) {
+    clearCart(state, action: PayloadAction<{ _id?: string; full?: boolean }>) {
       state.products = [];
       state.totalPrice = 0;
       localStorage.setItem("cart_item", JSON.stringify(state.products));

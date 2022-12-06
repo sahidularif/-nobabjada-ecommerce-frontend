@@ -36,12 +36,12 @@ const Article = () => {
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     await axios
-      .post("http://localhost:5000/addArticle", article)
+      .post("https://gleaming-puce-pullover.cyclic.app/article/addArticle", article)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
 
     console.log(article);
-   
+
   };
   // console.log(fileSelected)
   return (

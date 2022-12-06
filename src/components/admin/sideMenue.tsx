@@ -9,7 +9,7 @@ const SideMenue = () => {
       <ul className="">
         <li className="">
           <a href="/">
-            <MdGridView size={20} /> <span>sdsdfsf</span>
+            <MdGridView size={20} /> <span>Overview</span>
           </a>
         </li>
         <li>
@@ -18,12 +18,12 @@ const SideMenue = () => {
           </a>
         </li>
         <li>
-          <a href="/">
+          <a href="/dashboard/articles">
             <BsFileEarmarkPost size={20} /> <span>Article</span>
           </a>
         </li>
         <li>
-          <a href="/">
+          <a href="/dashboard/products">
             {" "}
             <MdProductionQuantityLimits size={20} /> <span>Products</span>
           </a>

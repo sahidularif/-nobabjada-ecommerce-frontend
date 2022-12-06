@@ -9,7 +9,7 @@ import { TProduct } from "../../redux/reducer/productSlice";
 type PropsType = {
   open: boolean;
   onClose: () => void;
-  item: TProduct
+  item: TProduct | null
 };
 
 const Modal = ({ open, onClose, item }: PropsType) => {
@@ -25,7 +25,7 @@ const Modal = ({ open, onClose, item }: PropsType) => {
           <div className="row align-items-center justify-content-center">
             <div className="col-md-6 col-sm-6 col-xs-12">
               <div className="modal-image">
-                <img className="img-responsive img-fluid" src={item.img_url} alt="product-img" />
+                <img className="img-responsive img-fluid" src={item?.img_url} alt="product-img" />
               </div>
             </div>
             <div className="col-md-6 col-sm-6 col-xs-12">
@@ -33,15 +33,15 @@ const Modal = ({ open, onClose, item }: PropsType) => {
                 <MdClose />
               </p>
               <div className="product-short-details">
-                <h2 className="product-title">{item.title}</h2>
-                <p className="product-price">${item.price}</p>
+                <h2 className="product-title">{item?.title}</h2>
+                <p className="product-price">${item?.price}</p>
                 <p className="product-short-description">
-                 {item.description}
+                 {item?.description}
                 </p>
                 <a href="cart.html" className="btn btn-main">
                   Add To Cart
                 </a><br/>
-                <Link to={'single-product/' + item.id } className="btn btn-transparent">
+                <Link to={'single-product/' + item?._id } className="btn btn-transparent">
                   View Product Details
                 </Link>
               </div>

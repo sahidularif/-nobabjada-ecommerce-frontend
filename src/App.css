@@ -27,7 +27,83 @@
 .App-link {
   color: #61dafb;
 }
+/* 404 */
+.page-404 {
+  padding: 100px 0;
+  text-align: center;
+}
 
+.page-404 h1 {
+  font-size: 300px;
+  font-weight: bold;
+  line-height: 300px;
+  margin-top: 30px;
+}
+
+@media (max-width: 480px) {
+  .page-404 h1 {
+    font-size: 130px;
+    line-height: 150px;
+  }
+}
+
+@media (max-width: 400px) {
+  .page-404 h1 {
+    font-size: 100px;
+    line-height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-404 h1 {
+    font-size: 150px;
+    line-height: 200px;
+  }
+}
+
+.page-404 h2 {
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 4px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.page-404 .copyright-text {
+  margin-top: 50px;
+  font-size: 12px;
+}
+.page-404 img{
+  margin:  0 auto;
+}
+.page-404 .btn-main, .page-404 .btn-solid-border, .page-404 .btn-transparent, .page-404 .btn-small {
+  margin-top: 40px;
+}
+.btn-main, .btn-solid-border, .btn-transparent, .btn-small {
+  background: #000;
+  color: #fff;
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 14px 35px;
+  text-transform: uppercase;
+  font-weight: 200;
+  border-radius: 0;
+}
+
+.btn-main.btn-icon i, .btn-icon.btn-solid-border i, .btn-icon.btn-transparent i, .btn-icon.btn-small i {
+  font-size: 16px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.btn-main:hover, .btn-solid-border:hover, .btn-transparent:hover, .btn-small:hover {
+  background: black;
+  color: #fff;
+}
+.page-404 .btn-main, .page-404 .btn-solid-border, .page-404 .btn-transparent, .page-404 .btn-small {
+  margin-top: 40px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

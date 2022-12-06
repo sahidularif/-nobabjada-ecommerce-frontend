@@ -10,7 +10,7 @@ const Tabs: React.FC<Props> = ({ children }) => {
   const [selectedTab, setSelectedTab] = useState(0)
 
   return (
-    <div className="order-list">
+    <div className="order-list p-4">
       <nav className="orders-table-tab app-nav-tabs nav shadow-sm flex-column flex-sm-row mb-5 mt-4">
         {children.map((item, index) => (
           <TabTitle

@@ -81,15 +81,22 @@ li:hover {
   background-color: #ffffff;
   display: flex;
   /* flex-direction: row; */
-  justify-content: right;
+  justify-content: center;
   align-items: center;
   width: 20%;
   border-bottom: 1px solid gainsboro;
   height: 60px;
 }
-
-.admin_second-nav div {
+.admin_second-nav > div{
+  padding: 5px 5px;
   margin: 0px 5px;
+  /* box-shadow: 0 0 0.75em rgb(0, 0, 0, 0.1); */
+}
+
+.toggleUser{
+  height: 150px;
+  width: 150px;
+  color: #000000 !important;
 }
 
 .admin_search {
@@ -110,7 +117,10 @@ li:hover {
   /* background-color: whitesmoke; */
 }
 
+
 .admin-profile img {
+  width: 30px;
+  height: 30px;
   border-radius: 50px;
 }
 
@@ -121,6 +131,10 @@ li:hover {
   justify-content: center;
   align-items: center;
   height: 60px;
+}
+.admin-profile .user-icon a {
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .admin_second-nav .dash {
@@ -207,7 +221,8 @@ li:hover {
   display: flex;
   text-decoration: none;
   padding: 10px 20px;
-  color: black
+  color: #252930;
+  font-weight: lighter;
 }
 
 .toggle_side_menue ul li a {
@@ -245,15 +260,19 @@ li:hover {
 
 .dashboard_main {
   width: 80%;
-  padding: 10px 30px;
+  padding: 10px 10px;
   justify-content: center;
   margin: 0 auto;
-  height: 100vh;
+  height: 100%;
   background-color: #F5F6FE;
 }
 .order-items{
   background-color: white;
   padding: 10px
+}
+.order-items tbody tr td{
+  padding: 15px 0px;
+  font-weight: normal;
 }
 .app-nav-tabs {
   background-color: #fff;
@@ -291,14 +310,25 @@ li:hover {
   font-weight: 500;
 }
 .admin-table tbody .cell{
-  margin-top: 20px !important;
+  /* margin-top: 20px !important; */
+  background-color: yellow;
 }
 .admin-table tbody tr td{
  color:#5D6779;
  font-weight: lighter;
+ background-color: yellow;
 }
 .admin-table tbody tr:hover{
  background-color: snow;
+}
+.dashboard_main .product-table tbody tr td img{
+  width: 50px;
+  height: 50px;
+}
+.dashboard_main .product-table tbody tr {
+  justify-content:flex-start;
+  align-items:flex-start;
+
 }
 .products-wrapper {
   width: 80%;
@@ -318,15 +348,31 @@ li:hover {
   width: 60%;
   /* background-color: #000000; */
   margin: 0 auto;
+  padding: 50px;
   justify-content: center;
 }
-
+.dashboard-sammary .sammary-block .sammary-body{
+  background-color: #fff;
+}
+.dashboard-sammary .sammary-block .sammary-body h6{
+  color: #5D6779;
+  font-weight: 400;
+}
+.dashboard-sammary .sammary-block .sammary-body h4{
+  color:crimson;
+  font-weight: 300;
+  line-height: 50px;
+}
+.dashboard-sammary .sammary-block .sammary-body p{
+  color:green;
+}
 @media only screen and (max-width: 769px) {
   .admin_header {
     padding: 10px 0;
     border-bottom: 1px solid gainsboro;
     width: 100%;
     background-color: #fcfcfc;
+    justify-content: space-between;
     /* box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2); */
   }
 
@@ -336,6 +382,7 @@ li:hover {
 
   .dashboard_logo {
     padding: 0;
+    width: auto;
   }
 
   .dashboard_logo {
@@ -360,6 +407,7 @@ li:hover {
 
   .admin_second-nav {
     justify-content: space-between;
+    width: auto;
   }
 
   .admin_second-nav div {

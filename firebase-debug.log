@@ -1,0 +1,29 @@
+[debug] [2022-11-16T16:40:43.124Z] ----------------------------------------------------------------------
+[debug] [2022-11-16T16:40:43.127Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Arif\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-11-16T16:40:43.128Z] CLI Version:   11.15.0
+[debug] [2022-11-16T16:40:43.128Z] Platform:      win32
+[debug] [2022-11-16T16:40:43.128Z] Node Version:  v16.16.0
+[debug] [2022-11-16T16:40:43.139Z] Time:          Wed Nov 16 2022 22:40:43 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-11-16T16:40:43.139Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-11-16T16:40:43.248Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-11-16T16:40:43.249Z] > authorizing via signed-in user (msarifdev@gmail.com)
+[debug] [2022-11-16T16:40:43.249Z] [iam] checking project nobab-3b3c4 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-11-16T16:40:43.251Z] > refreshing access token with scopes: []
+[debug] [2022-11-16T16:40:43.254Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-11-16T16:40:43.254Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-11-16T16:40:45.179Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-11-16T16:40:45.179Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-11-16T16:40:45.188Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/nobab-3b3c4:testIamPermissions [none]
+[debug] [2022-11-16T16:40:45.189Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/nobab-3b3c4:testIamPermissions x-goog-quota-user=projects/nobab-3b3c4
+[debug] [2022-11-16T16:40:45.189Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nobab-3b3c4:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-11-16T16:40:48.319Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/nobab-3b3c4:testIamPermissions 200
+[debug] [2022-11-16T16:40:48.320Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nobab-3b3c4:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-11-16T16:40:48.325Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nobab-3b3c4 [none]
+[debug] [2022-11-16T16:40:59.401Z] Failed to make request to https://firebase.googleapis.com/v1beta1/projects/nobab-3b3c4
+[debug] [2022-11-16T16:41:04.409Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\Arif\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:253:49)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[error] 
+[error] Error: An unexpected error has occurred.

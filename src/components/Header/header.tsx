@@ -2,29 +2,35 @@ import React from "react";
 import "../../styles/style.css";
 import logo from "../../nobabjada.png";
 import { HiMenuAlt3 } from "react-icons/hi";
-
 import { MdClose } from "react-icons/md";
 import { CgShoppingCart } from "react-icons/cg";
-import {
-  useAppDispatch,
-  useAppSelector,
-} from "../../redux/hooks/useTypeSelector";
+import { useAppDispatch, useAppSelector, } from "../../redux/hooks/useTypeSelector";
 import Cart from "../Cart/cart";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { logout } from "../../redux/reducer/authSlices";
-import { VscSearch, VscSearchStop } from "react-icons/vsc";
-import PaymentGateway from "../checkout/checkout";
 import PayButton from "../checkout/payButton";
+
 
 type PropsType = {
   openModal: boolean;
   setOpenModal: (openModal: boolean) => void;
 };
-
+const options = {
+  position: "top-right",
+  autoClose: 5000,
+  hideProgressBar: false,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+  theme: "light",
+}
 const Header = () => {
   const [toggleMenu, setToggleMenu] = React.useState(false);
   const [toggleCart, setToggleCart] = React.useState(false);
   const [isAuthenticated, setIsAuthenticated] = React.useState(false);
+ 
+
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   // const dispatch = useAppDispatch();
@@ -77,6 +83,7 @@ const Header = () => {
                 <button
                   className="signin_button"
                   onClick={() => {
+                    setToggleCart(true)
                     dispatch(logout());
                     window.location.reload();
                   }}
@@ -112,7 +119,10 @@ const Header = () => {
                   <CgShoppingCart
                     color="#fff"
                     size={30}
-                    onClick={() => setToggleCart(true)}
+                    onClick={() => {
+                      setToggleCart(true)
+                      
+                    }}
                   />
                   <span style={{ color: "#fff" }}>{products.length}</span>
                 </div>
@@ -124,7 +134,7 @@ const Header = () => {
                         fontSize={50}
                         onClick={() => setToggleCart(false)}
                       />
-                      
+
                     </div>
                     <Cart />
                     <div className="checkout">
@@ -190,9 +200,12 @@ const Header = () => {
             )}
           </div>
         </div>
+       
+        {/* Same as */}
         {/* <Modal 
         open={openModal} 
         onClose={() => setOpenModal(false)} /> */}
+
       </div>
 
     </header>

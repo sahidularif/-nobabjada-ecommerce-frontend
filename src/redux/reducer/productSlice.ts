@@ -1,26 +1,22 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import axios from "axios";
 import names from "../../data.json";
-interface Isize {
-  small?: string;
-  medium?: string;
-  large?: string;
-};
+
 interface Icolor {
-  color_1?: string | null;
-  color_2?: string | null;
-  color_3?: string | null;
+  color1?: string | null;
+  color2?: string | null;
+  color3?: string | null;
 };
 export type Product = {
-  id: number;
+  _id: string;
   title: string;
   price: number;
   description: string;
-  size: Isize;
   color: Icolor;
   img_url: string;
 };
 export type TProduct = {
-  id: number;
+  _id: string;
   title: string;
   price: number;
   description: string;
@@ -29,18 +25,22 @@ export type TProduct = {
 
 interface ProductState {
   loading: boolean;
-  data: Product[] ;
+  data: Product[] | [];
   error: string | null;
 }
 
 export const fetchProducts = createAsyncThunk("products/fetch", async () => {
-  const res = await fetch("../../data");
-  const data = await res.json();
-  return data;
+  
+  try {
+    const response = await axios.get('http://localhost:5000/product/getAllProduct');
+    return response.data;
+  } catch (error) {
+    console.log('Error: ', error);
+  }
 });
 const initialState: ProductState = {
   loading: false,
-  data: names,
+  data: [],
   error: null,
 };
 export const productSlice = createSlice({
@@ -52,15 +52,16 @@ export const productSlice = createSlice({
       .addCase(fetchProducts.pending, (state, action) => {
         state.loading = true;
       })
-      .addCase(
-        fetchProducts.fulfilled,
-        (state, action: PayloadAction<Product[]>) => {
-          state.data = action.payload;
-          state.loading = false;
-        }
+      .addCase(fetchProducts.fulfilled, (state, action: PayloadAction<Product[]>) => {
+        state.data = action.payload || [];
+        state.loading = false;
+        state.error = null
+      }
       )
       .addCase(fetchProducts.rejected, (state, action: PayloadAction<any>) => {
         state.error = action.payload;
+        state.data = []
+        state.loading = false
       });
   },
 });

@@ -6,7 +6,7 @@ type Props = {
 }
 
 const Tab: React.FC<Props> = ({ title, children }) => {
-  return <div className='order-items' title={title}>{children}</div>
+  return <div className='p-4 order-items' title={title}>{children}</div>
 }
 
 export default Tab

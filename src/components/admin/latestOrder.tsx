@@ -7,11 +7,28 @@ import { OrderInterface } from "../../redux/models/OrderInterface"
 import Spinner from 'react-bootstrap/Spinner';
 import { Button, Table } from "react-bootstrap"
 
-export default function Order({ orders }: { orders: OrderInterface[] }) {
+export default function LatestOrder() {
+    const [orders, setOrders] = React.useState<OrderInterface[]>([])
+    const navigate = useNavigate()
+
+    React.useEffect(() => {
+        axios.get(`https://gleaming-puce-pullover.cyclic.app/product/getAllOrder`, { headers: authHeader() })
+            .then((res) => {
+                if (res.data) {
+                    setOrders(res.data)
+                }
+            })
+            .catch((err) => {
+                if (err.response.status == '403')
+                    navigate('/login')
+                console.log(err);
+
+            })
+    })
 
     return (
         <>
-            <Table striped hover className="p-4">
+            <Table striped hover>
                 <thead>
                     <tr>
                         <th>Order</th>

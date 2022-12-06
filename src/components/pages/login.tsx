@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import logo from "../../nobabjada-2.png";
@@ -18,8 +18,10 @@ import { auth, googleProvider } from "../../firebase/firebaseConfig";
 const Login = () => {
   const [successful, setSuccessful] = useState(false);
   const { message } = useAppSelector((state) => state.message);
-  const navigat = useNavigate();
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const location = useLocation()
+  let from = location.state?.from?.pathname || "/";
 
   useEffect(() => {
     dispatch(clearMessage());
@@ -46,11 +48,12 @@ const Login = () => {
       .then(() => {
         setSuccessful(true);
         setTimeout(() => {
-          navigat("/");
-        }, 2000);
+          navigate(from, { replace: true });
+        }, 1000);
       })
       .catch(() => {
         setSuccessful(false);
+        <Navigate to="/login" state={{ from: location }} replace />;
       });
   };
   const handleGoogleLogin = async () => {
@@ -59,7 +62,7 @@ const Login = () => {
       .then(() => {
         setSuccessful(true);
         setTimeout(() => {
-          navigat("/");
+          navigate("/");
         }, 2000);
       })
       .catch(() => {
@@ -71,7 +74,7 @@ const Login = () => {
       <div className="container-login100">
         <div className="wrap-login100 p-l-110 p-r-110 p-t-30 p-b-33">
           <span className="login100-form-title p-b-53 mb-5 justify-content-center text-center">
-          <Link to="/"><img src={logo} alt="logo" className="img-fluid"/></Link>
+            <Link to="/"><img src={logo} alt="logo" className="img-fluid" /></Link>
             Welcome back
           </span>
           <div className="w-full d-flex justify-content-between">

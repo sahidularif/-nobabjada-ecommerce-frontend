@@ -10,12 +10,15 @@ import superAdmin from "../../images/super_admin.jpg";
 import "../../styles/dashboard.css";
 import { HiViewGrid } from "react-icons/hi";
 import { BsFileEarmarkPost } from "react-icons/bs";
+import { Dropdown, NavDropdown } from "react-bootstrap";
 
 const Header = () => {
   const [show, setShow] = React.useState(false);
+  const [toggleUser, setToggleUser] = React.useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
   return (
     <header className="admin_header">
 
@@ -28,7 +31,7 @@ const Header = () => {
       </div>
 
       <div className="admin_search">
-        <input type="text" placeholder="Search admin" />
+      <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Search dashboard..."/>
       </div>
 
       <div className="admin_second-nav">
@@ -38,10 +41,21 @@ const Header = () => {
         <div>
           <VscBellDot color="#000" size={20} />
         </div>
-        <div className="dash"></div>
-        <div className="admin-profile">
-          <img src={superAdmin} alt="admin image" height="30px" width="30px" />
-          <FaCaretDown color="black" />
+        {/* <div className="dash"></div> */}
+        <div className="admin-profile" >
+
+          <Dropdown className="user-icon">
+            <Dropdown.Toggle variant="outline-white" className="d-flex align-items-center border-0" id="dropdown-basic">
+            <img src={superAdmin} className="" alt="logo" />
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              <Dropdown.Item href="#/action-1" className="h6">Account</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Settings</Dropdown.Item>
+              <hr/>
+              <Dropdown.Item href="#/action-3">Log Out</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         </div>
       </div>
       <Offcanvas show={show} onHide={handleClose} style={{ 'width': '40%' }}>

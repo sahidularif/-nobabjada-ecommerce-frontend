@@ -1,155 +1,216 @@
-[
-  {
-    "id": 1,
-    "title": "Amazing",
-    "price": 50,
-    "description": "Amazing",
-    "color": {
-      "color_1": "#8da1cd",
-      "color_2": "#000",
-      "color_3": "#e6e2d6"
+{
+  "data":[
+    {
+      "id": 1,
+      "title": "Amazing mobile speaker",
+      "price": 50,
+      "description": "Amazing mobile speaker",
+      "color": {
+        "color1": "#8da1cd",
+        "color2": "#000",
+        "color3": "#e6e2d6"
+      },
+      "size": {
+        "xs": false,
+        "s": false,
+        "m": false,
+        "l": false,
+        "xl": false,
+        "xxl": false
+      },
+      "img_url": "/images/product/pd1.png"
     },
-    "size": {
-      "small": "S",
-      "medium": "M",
-      "large": "L"
+    {
+      "id": 2,
+      "title": "Beats solo 4D headphone",
+      "price": 100,
+      "description": "Beats solo 4D headphone",
+      "color": {
+        "color1": "#800080",
+        "color2": "#FFFF00",
+        "color3": "#000"
+      },
+      "size": {
+        "xs": false,
+        "s": false,
+        "m": false,
+        "l": false,
+        "xl": false,
+        "xxl": false
+      },
+      "img_url": "/images/product/pd2.png"
     },
-    "img_url": "/images"
-  },
-  {
-    "id": 2,
-    "title": "Beats",
-    "price": 100,
-    "description": "Beats",
-    "color": {
-      "color_1": "#800080",
-      "color_2": "#FFFF00",
-      "color_3": "#000"
+    {
+      "id": 3,
+      "title": "Apple smart watch",
+      "price": 200,
+      "description": "Apple smart watch",
+      "color": {
+        "color1": "#a52a2a",
+        "color2": "#ff7f50",
+        "color3": "#696969"
+      },
+      "size": {
+        "xs": false,
+        "s": false,
+        "m": false,
+        "l": false,
+        "xl": false,
+        "xxl": false
+      },
+      "img_url": "/images/product/pd3.png"
     },
-    "size": {
-      "small": "S",
-      "medium": "M",
-      "large": "L"
+    {
+      "id": 4,
+      "title": "Beats solo headphone",
+      "price": 150,
+      "description": "Beats solo headphone",
+      "color": {
+        "color1": "#add8e6",
+        "color2": "#da70d6",
+        "color3": "#ff00ff"
+      },
+      "size": {
+        "xs": false,
+        "s": false,
+        "m": false,
+        "l": false,
+        "xl": false,
+        "xxl": false
+      },
+      "img_url": "/images/product/pd4.png"
     },
-    "img_url": "/images"
-  },
-  {
-    "id": 3,
-    "title": "Apple smart watch",
-    "price": 200,
-    "description": "desc",
-    "color": {
-      "color_1": "#a52a2a",
-      "color_2": "#ff7f50",
-      "color_3": "#696969"
+    {
+      "id": 5,
+      "title": "Apple mobile speaker pod",
+      "price": 300,
+      "description": "Apple mobile speaker pod",
+      "color": {
+        "color1": "#8da1cd",
+        "color2": "#000",
+        "color3": "#e6e2d6"
+      },
+      "size": {
+        "xs": false,
+        "s": false,
+        "m": false,
+        "l": false,
+        "xl": false,
+        "xxl": false
+      },
+      "img_url": "/images/product/pd5.png"
     },
-    "size": {
-      "small": "S",
-      "medium": "M",
-      "large": "L"
+    {
+      "id": 6,
+      "title": "Amazing virtual oculus",
+      "price": 200,
+      "description": "Amazing virtual oculus",
+      "color": {
+        "color1": "#a52a2a",
+        "color2": "#ff7f50",
+        "color3": "#696969"
+      },
+      "size": {
+        "xs": false,
+        "s": false,
+        "m": false,
+        "l": false,
+        "xl": false,
+        "xxl": false
+      },
+      "img_url": "/images/product/pd6.png"
     },
-    "img_url": "/images/product/pd3.png"
-  },
-  {
-    "id": 4,
-    "title": "Beats solo headphone",
-    "price": 150,
-    "description": "Beats solo headphone",
-    "color": {
-      "color_1": "#add8e6",
-      "color_2": "#da70d6",
-      "color_3": "#ff00ff"
+    {
+      "id": 7,
+      "title": "4d beats solo headphone",
+      "price": 250,
+      "description": "4d beats solo headphone",
+      "color": {
+        "color1 ": "#FF6347",
+        "color2": "#2B1B17",
+        "color3": "#E8ADAA"
+      },
+      "size": {
+        "xs": false,
+        "s": false,
+        "m": false,
+        "l": false,
+        "xl": false,
+        "xxl": false
+      },
+      "img_url": "/images/product/pd7.png"
     },
-    "size": {
-      "small": "S",
-      "medium": "M",
-      "large": "L"
+    {
+      "id": 8,
+      "title": "Amazing console",
+      "price": 100,
+      "description": "Amazing console",
+      "color": {
+        "color1": "#E75480",
+        "color2": "#E30B5D",
+        "color3": "#614051"
+      },
+      "size": {
+        "xs": false,
+        "s": false,
+        "m": false,
+        "l": false,
+        "xl": false,
+        "xxl": false
+      },
+      "img_url": "/images/product/pd8.png"
     },
-    "img_url": "/images/product/pd4.png"
-  },
-  {
-    "id": 5,
-    "title": "Apple mobile speaker pod",
-    "price": 300,
-    "description": "Apple mobile speaker pod",
-    "color": {
-      "color_1": "#8da1cd",
-      "color_2": "#000",
-      "color_3": "#e6e2d6"
+    {
+      "id": 9,
+      "title": "Apple silver watch",
+      "price": 100,
+      "description": "Apple silver watch",
+      "color": {
+        "color1": "#8da1cd",
+        "color2": "#000",
+        "color3": "#e6e2d6"
+      },
+      "size": {
+        "xs": false,
+        "s": false,
+        "m": false,
+        "l": false,
+        "xl": false,
+        "xxl": false
+      },
+      "img_url": "/images/product/pd9.png"
+    }
+  ],
+  "salesData": [
+    {
+      "id": 1,
+      "year": 2016,
+      "sales": 80000,
+      "expense": 823
     },
-    "size": {
-      "small": "S",
-      "medium": "M",
-      "large": "L"
+    {
+      "id": 2,
+      "year": 2017,
+      "sales": 45677,
+      "expense": 345
     },
-    "img_url": "/images/product/pd5.png"
-  },
-  {
-    "id": 6,
-    "title": "Amazing virtual oculus",
-    "price": 200,
-    "description": "Amazing virtual oculus",
-    "color": {
-        "color_1": "#a52a2a",
-        "color_2": "#ff7f50",
-        "color_3": "#696969"
+    {
+      "id": 3,
+      "year": 2018,
+      "sales": 78888,
+      "expense": 555
     },
-    "size": {
-      "small": "S",
-      "medium": "M",
-      "large": "L"
+    {
+      "id": 4,
+      "year": 2019,
+      "sales": 90000,
+      "expense": 4555
     },
-    "img_url": "/images/product/pd6.png"
-  },
-  {
-    "id": 7,
-    "title": "4d beats solo headphone",
-    "price": 250,
-    "description": "4d beats solo headphone",
-    "color": {
-      "color_1 ": "#FF6347",
-      "color_2": "#2B1B17",
-      "color_3": "#E8ADAA"
-    },
-    "size": {
-      "small": "S",
-      "medium": "M",
-      "large": "L"
-    },
-    "img_url": "/images/product/pd7.png"
-  },
-  {
-    "id": 8,
-    "title": "Amazing console",
-    "price": 100,
-    "description": "Amazing console",
-    "color": {
-      "color_1": "#E75480",
-      "color_2": "#E30B5D",
-      "color_3": "#614051"
-    },
-    "size": {
-      "small": "S",
-      "medium": "M",
-      "large": "L"
-    },
-    "img_url": "/images/product/pd8.png"
-  },
-  {
-    "id": 9,
-    "title": "Apple silver watch",
-    "price": 100,
-    "description": "Apple silver watch",
-    "color": {
-      "color_1": "#8da1cd",
-      "color_2": "#000",
-      "color_3": "#e6e2d6"
-    },
-    "size": {
-      "small": "S",
-      "medium": "M",
-      "large": "L"
-    },
-    "img_url": "/images/product/pd9.png"
-  }
-]
+    {
+      "id": 5,
+      "year": 2020,
+      "sales": 4300,
+      "expense": 234
+    }
+  ]
+}

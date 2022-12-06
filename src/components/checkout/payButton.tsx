@@ -10,7 +10,7 @@ const PayButton = () => {
   const handleCheckout = () => {
     console.log(products)
     axios
-      .post(`https://nobabjada-ecommerce.onrender.com/stripe/checkout`, {
+      .post(` https://gleaming-puce-pullover.cyclic.app/stripe/checkout`, {
         products,
         userId: user?.id,
       })

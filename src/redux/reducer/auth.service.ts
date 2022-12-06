@@ -9,6 +9,7 @@ import { LoginUser } from '../models/LoginUser.interface';
 import { NewUser } from '../models/NewUser';
 
 //Base Url
+// const API_URL = "https://gleaming-puce-pullover.cyclic.app/auth/"
 const API_URL = "http://localhost:5000/auth/"
 
 // User Registration

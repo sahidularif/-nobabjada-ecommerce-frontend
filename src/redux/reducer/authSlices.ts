@@ -1,12 +1,10 @@
-import { createSlice, createAsyncThunk, PayloadAction, ThunkAction } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk,} from "@reduxjs/toolkit";
 import { setMessage } from "./messages";
 import authService from "./auth.service";
 import { DisplayUser } from "../models/DisplayUser.interface";
 import { NewUser } from "../models/NewUser";
 import { LoginUser } from "../models/LoginUser.interface";
 import { Jwt } from "../models/Jwt";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { auth, googleProvider } from "../../firebase/firebaseConfig";
 
 const storedUser: string | null = localStorage.getItem('user');
 const user: DisplayUser | null = !!storedUser ? JSON.parse(storedUser) : null;
