@@ -30,7 +30,6 @@ const BestProducts: FC = () => {
   React.useEffect(()=>{
     dispatch(fetchProducts())
   }, [])
-console.log(data)
   return (
     <section className="products section"
     onClick={(e)=>e.stopPropagation()}

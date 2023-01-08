@@ -10,7 +10,7 @@ import { NewUser } from '../models/NewUser';
 
 //Base Url
 // const API_URL = "https://gleaming-puce-pullover.cyclic.app/auth/"
-const API_URL = "http://localhost:5000/auth/"
+const API_URL = "https://gleaming-puce-pullover.cyclic.app/auth/"
 
 // User Registration
 const register = async (newUser: NewUser): Promise<DisplayUser | null> => {

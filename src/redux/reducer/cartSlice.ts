@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { type } from "os";
 import names from "../../data.json";
 
@@ -10,7 +10,6 @@ type CartState = {
   products: CartItem[];
   totalPrice: number;
 };
-const getProductFromLocalStorage: any = localStorage.getItem('cart')
 // const localData = JSON.parse(getProductFromLocalStorage)
 const initialState: CartState = {
   products: JSON.parse(localStorage.getItem("cart_item") || "[]"),
