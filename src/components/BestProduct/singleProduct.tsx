@@ -1,17 +1,12 @@
 import React from "react";
-import { BrowserRouter, Link, Route, Routes, useParams, } from "react-router-dom";
-import storeItems from "../../data.json";
+import {useParams, } from "react-router-dom";
 import "../../styles/singleProduct.css";
-
-import pd1 from "../../images/product/pd1.png";
 import user1 from "../../images/user/man1.jpg";
 import user2 from "../../images/user/man2.jpeg";
 import user3 from "../../images/user/man3.jpg";
-import Header from "../Header/header";
 import { fetchProducts, Product } from "../../redux/reducer/productSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks/useTypeSelector";
 import { addProductToCart } from "../../redux/reducer/cartSlice";
-import { MdApartment, MdHouse, MdHouseboat } from "react-icons/md";
 
 export type MyParams = {
   _id: string;

@@ -11,14 +11,27 @@ import "../../styles/dashboard.css";
 import { HiViewGrid } from "react-icons/hi";
 import { BsFileEarmarkPost } from "react-icons/bs";
 import { Dropdown, NavDropdown } from "react-bootstrap";
+// import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import { useAppDispatch } from "../../redux/hooks/useTypeSelector";
+import { logout } from "../../redux/reducer/authSlices";
+import { Navigate, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [show, setShow] = React.useState(false);
   const [toggleUser, setToggleUser] = React.useState(false);
-
+  const dispatch = useAppDispatch()
+  const location = useLocation()
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const userLogout = () => {
+    dispatch(logout())
+      .then(() => {
+        window.location.reload();
+        
+      })
+  }
   return (
     <header className="admin_header">
 
@@ -31,31 +44,32 @@ const Header = () => {
       </div>
 
       <div className="admin_search">
-      <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Search dashboard..."/>
+        <input type="text" className=" border form-control" id="exampleFormControlInput1" placeholder="Search dashboard..." />
       </div>
 
       <div className="admin_second-nav">
-        <div>
+        {/* <div>
           <MdMessage color="#000" size={20} />
         </div>
         <div>
           <VscBellDot color="#000" size={20} />
-        </div>
+        </div> */}
         {/* <div className="dash"></div> */}
         <div className="admin-profile" >
 
           <Dropdown className="user-icon">
             <Dropdown.Toggle variant="outline-white" className="d-flex align-items-center border-0" id="dropdown-basic">
-            <img src={superAdmin} className="" alt="logo" />
+              <img src={superAdmin} className="" alt="logo" />
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
               <Dropdown.Item href="#/action-1" className="h6">Account</Dropdown.Item>
               <Dropdown.Item href="#/action-2">Settings</Dropdown.Item>
-              <hr/>
-              <Dropdown.Item href="#/action-3">Log Out</Dropdown.Item>
+              <hr />
+              <Dropdown.Item href="#/action-3" onClick={userLogout}>Log Out</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
+
         </div>
       </div>
       <Offcanvas show={show} onHide={handleClose} style={{ 'width': '40%' }}>

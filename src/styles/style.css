@@ -614,7 +614,7 @@ svg {
 
 .category-box .content {
   position: absolute;
-  z-index: 999;
+  z-index: 9;
   top: 0;
   padding: 25px;
 }
@@ -635,6 +635,12 @@ svg {
   margin: 0;
   color: #333;
   font-size: 20px;
+  font-weight: 500;
+}
+.category-box .content p {
+  margin: 0;
+  color: #333;
+  font-size: 15px;
   font-weight: 500;
 }
 

@@ -18,6 +18,7 @@ import { auth, googleProvider } from "../../firebase/firebaseConfig";
 const Login = () => {
   const [successful, setSuccessful] = useState(false);
   const { message } = useAppSelector((state) => state.message);
+  const { user } = useAppSelector((state) => state.auth);
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const location = useLocation()
@@ -26,6 +27,10 @@ const Login = () => {
   useEffect(() => {
     dispatch(clearMessage());
   }, [dispatch]);
+  useEffect(() => {
+    if (user) navigate('/')
+
+  }, []);
 
   const initialValues = {
     email: "",
@@ -44,7 +49,6 @@ const Login = () => {
     setSuccessful(false);
 
     dispatch(login(formValue))
-      .unwrap()
       .then(() => {
         setSuccessful(true);
         setTimeout(() => {

@@ -36,9 +36,7 @@ const Herosection = () => {
             </div>
           </div>
           <div className="process">
-            <div>
-              <RiSecurePaymentLine size={30} color="#000" />
-            </div>
+          <RiSecurePaymentLine size={30} color="#000" />
             <div>
               <h5>Money Gurantee</h5>
               <p>30 Days Money Back</p>
