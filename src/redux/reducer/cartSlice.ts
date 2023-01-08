@@ -1,6 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { type } from "os";
-import names from "../../data.json";
 
 import { Product } from "../reducer/productSlice";
 export type CartItem = Product & {
@@ -23,7 +21,7 @@ const cartSlice = createSlice({
   reducers: {
     addProductToCart: (state: CartState, action: PayloadAction<{ product: Product, quantity?: number }>) => {
       const newItem = action.payload?.product;
-      const { product, quantity } = action.payload
+      const { quantity } = action.payload
       const existingItemIndex = state.products.findIndex(
         (product) => product._id === newItem?._id
       );

@@ -12,8 +12,6 @@ import {
 } from "../../redux/hooks/useTypeSelector";
 import { LoginUser } from "../../redux/models/LoginUser.interface";
 import { clearMessage } from "../../redux/reducer/messages";
-import { signInWithPopup } from "firebase/auth";
-import { auth, googleProvider } from "../../firebase/firebaseConfig";
 
 const Login = () => {
   const [successful, setSuccessful] = useState(false);
