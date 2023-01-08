@@ -11,14 +11,11 @@ import Product from "./components/admin/product";
 import Details from "./components/admin/overview";
 import SingleProduct from "./components/BestProduct/";
 import PrivateOutlet from "./firebase/PrivateOutlet";
-import { useDispatch } from "react-redux";
 import Register from "./components/pages/register";
 import Forgetpassword from "./components/pages/forgetPassword";
-import CheckOut from "./components/checkout/checkout";
 import Orders from "./components/admin/orders";
 import Checkout from "./components/pages/checkout";
 import CheckoutSuccess from "./CheckoutSuccess";
-import { useAppSelector } from "./redux/hooks/useTypeSelector";
 import NF_404 from "./components/pages/NF_404";
 import AddCategory from "./components/admin/addCategory";
 import EditCategory from "./components/admin/EditCategory";
@@ -35,10 +32,8 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="forgetPassword" element={<Forgetpassword />} />
-          {/* <Route path="/product/:id" element={<Details />} /> */}
           <Route path="single-product/:_id" element={<SingleProduct />} />
           <Route path="admin" element={<Admin chield={<Login />} />} />
-
           <Route path="checkout-success" element={<CheckoutSuccess />} />
           <Route path="checkout" element={<Checkout />} />
           <Route path="dashboard" element={<PrivateOutlet />}>
@@ -48,11 +43,9 @@ function App() {
             <Route path="orders" element={<Admin chield={<Orders />} />} />
             <Route path="products" element={<Admin chield={<Product />} />} />
             <Route path="add-category" element={<Admin chield={<AddCategory />} />} />
-            {/* <Route path="edit/:id" element={<Admin chield={<AddCategory />} />} /> */}
             <Route path="categories" element={<Admin chield={<Category />} />} />
             <Route path="categories/edit/:id" element={<Admin chield={<EditCategory />} />} />
           </Route>
-          {/* <Route path="/edit/:id" element={<CheckoutSuccess />} /> */}
           <Route path="*" element={<NF_404 />} />
         </Routes>
       </BrowserRouter>

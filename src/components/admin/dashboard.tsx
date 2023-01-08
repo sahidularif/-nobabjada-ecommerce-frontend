@@ -1,7 +1,5 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import "../../styles/dashboard.css";
-import { MdGridView, MdSettings } from "react-icons/md";
-import logo from "../../nobabjada-2.png";
 import SideMenue from "./sideMenue";
 import { ChieldProps } from "./admin";
 

@@ -29,15 +29,6 @@ const Product = () => {
     },
     img_url: "",
   });
-  // const checkboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   console.log(e.target.value)
-  //   const i = e.target.name
-  //   setProduct((prev) => ({
-  //     ...prev, size: {
-  //       ...prev.size, [e.target.name]: !prev.size[`l`]
-  //     }
-  //   }))
-  // }
   const handleImageChange = function (e: React.ChangeEvent<HTMLInputElement>) {
     const fileList = e.target.files;
     if (!fileList) return;
@@ -76,10 +67,10 @@ const Product = () => {
   // When Form submit
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // await axios
-    //   .post("http://localhost:5000/product/addProduct", product, { headers: authHeader() })
-    //   .then((res) => console.log(res))
-    //   .catch((err) => console.log(err));
+    await axios
+      .post("https://gleaming-puce-pullover.cyclic.app/product/addProduct", product, { headers: authHeader() })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
     notify()
     console.log(product);
 

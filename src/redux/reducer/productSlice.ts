@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
-import names from "../../data.json";
 
 interface Icolor {
   color1?: string | null;
@@ -32,7 +31,7 @@ interface ProductState {
 export const fetchProducts = createAsyncThunk("products/fetch", async () => {
   
   try {
-    const response = await axios.get('http://localhost:5000/product/getAllProduct');
+    const response = await axios.get('https://gleaming-puce-pullover.cyclic.app//product/getAllProduct');
     return response.data;
   } catch (error) {
     console.log('Error: ', error);

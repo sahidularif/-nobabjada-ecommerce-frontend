@@ -22,9 +22,9 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addProductToCart: (state: CartState, action: PayloadAction<{product: Product, quantity?:number}>) => {
+    addProductToCart: (state: CartState, action: PayloadAction<{ product: Product, quantity?: number }>) => {
       const newItem = action.payload?.product;
-      const {product, quantity} = action.payload
+      const { product, quantity } = action.payload
       const existingItemIndex = state.products.findIndex(
         (product) => product._id === newItem?._id
       );
@@ -34,7 +34,7 @@ const cartSlice = createSlice({
         state.totalPrice += newItem?.price;
         localStorage.setItem('cart_item', JSON.stringify(state.products))
         localStorage.setItem('cart_total', JSON.stringify(state.totalPrice))
-      } else{
+      } else {
         state.products.push({
           ...newItem,
           quantity: quantity && quantity > 0 ? quantity : 1

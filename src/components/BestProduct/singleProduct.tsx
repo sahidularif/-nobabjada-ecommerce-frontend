@@ -1,5 +1,5 @@
 import React from "react";
-import {useParams, } from "react-router-dom";
+import { useParams, } from "react-router-dom";
 import "../../styles/singleProduct.css";
 import user1 from "../../images/user/man1.jpg";
 import user2 from "../../images/user/man2.jpeg";

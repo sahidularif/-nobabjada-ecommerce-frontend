@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Button, Spinner } from "react-bootstrap";
 import { FaRegEdit } from "react-icons/fa";
 import { VscTrash } from "react-icons/vsc";
 import { Link } from "react-router-dom";
@@ -26,7 +25,7 @@ function Category() {
     const [filterParam, setFilterParam] = useState("All");
     let serial = 0
     useEffect(() => {
-        fetch("http://localhost:5000/product/getAllCategory", { headers: authHeader() })
+        fetch("https://gleaming-puce-pullover.cyclic.app/product/getAllCategory", { headers: authHeader() })
             .then((res) => res.json())
             .then(
                 (result) => {
@@ -78,7 +77,7 @@ function Category() {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:5000/product/deleteCategory/${id}`)
+                axios.delete(`https://gleaming-puce-pullover.cyclic.app/product/deleteCategory/${id}`)
                     .then((res) => {
                         setSuccess(true)
                         if (res.status === 200) {

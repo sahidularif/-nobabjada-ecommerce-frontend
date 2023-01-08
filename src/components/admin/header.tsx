@@ -1,27 +1,22 @@
 import React from "react";
 import logo from "../../nobabjada-2.png";
 import {
-  MdGridView, MdMessage, MdProductionQuantityLimits, MdSearch, MdSettings,
+  MdGridView, MdProductionQuantityLimits, MdSearch, MdSettings,
 } from "react-icons/md";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { FaCaretDown } from "react-icons/fa";
-import { VscAccount, VscBellDot } from "react-icons/vsc";
+import { VscAccount } from "react-icons/vsc";
 import superAdmin from "../../images/super_admin.jpg";
 import "../../styles/dashboard.css";
 import { HiViewGrid } from "react-icons/hi";
 import { BsFileEarmarkPost } from "react-icons/bs";
-import { Dropdown, NavDropdown } from "react-bootstrap";
-// import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
+import { Dropdown } from "react-bootstrap";
 import { useAppDispatch } from "../../redux/hooks/useTypeSelector";
 import { logout } from "../../redux/reducer/authSlices";
-import { Navigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
   const [show, setShow] = React.useState(false);
-  const [toggleUser, setToggleUser] = React.useState(false);
   const dispatch = useAppDispatch()
-  const location = useLocation()
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 

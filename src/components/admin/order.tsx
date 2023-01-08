@@ -1,11 +1,6 @@
-import axios, { AxiosRequestConfig } from "axios"
 import React from "react"
-import { useNavigate } from "react-router-dom"
-import { string } from "yup"
-import { authHeader } from "../../redux/auth/authHeader"
 import { OrderInterface } from "../../redux/models/OrderInterface"
-import Spinner from 'react-bootstrap/Spinner';
-import { Button, Table } from "react-bootstrap"
+import { Table } from "react-bootstrap"
 
 export default function Order({ orders }: { orders: OrderInterface[] }) {
 

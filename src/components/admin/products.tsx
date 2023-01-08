@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Button, Spinner } from "react-bootstrap";
 import { FaRegEdit } from "react-icons/fa";
 import { VscTrash } from "react-icons/vsc";
 import { Link } from "react-router-dom";
@@ -26,7 +25,7 @@ function Products() {
   const [filterParam, setFilterParam] = useState("All");
   let serial = 0
   useEffect(() => {
-    fetch("http://localhost:5000/product/getAllProduct", { headers: authHeader() })
+    fetch("https://gleaming-puce-pullover.cyclic.app/product/getAllProduct", { headers: authHeader() })
       .then((res) => res.json())
       .then(
         (result) => {

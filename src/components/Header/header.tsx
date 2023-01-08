@@ -6,10 +6,9 @@ import { MdClose } from "react-icons/md";
 import { CgShoppingCart } from "react-icons/cg";
 import { useAppDispatch, useAppSelector, } from "../../redux/hooks/useTypeSelector";
 import Cart from "../Cart/cart";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../redux/reducer/authSlices";
 import PayButton from "../checkout/payButton";
-
 
 type PropsType = {
   openModal: boolean;
@@ -25,6 +24,7 @@ const options = {
   progress: undefined,
   theme: "light",
 }
+
 const Header = () => {
   const [toggleMenu, setToggleMenu] = React.useState(false);
   const [toggleCart, setToggleCart] = React.useState(false);

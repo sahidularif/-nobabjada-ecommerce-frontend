@@ -1,6 +1,4 @@
-import { FileHandle } from 'fs/promises';
-import React, { useState, useRef, ChangeEvent, LegacyRef } from 'react';
-import altImg from '../../images/icons/fb.png';
+import React from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { category } from '../../utilities/category.type';
@@ -72,7 +70,7 @@ const AddCategory = () => {
         formData.append('parentCategory', formValue.parent)
 
         axios
-            .post("http://localhost:5000/product/addCategory", formData)
+            .post("https://gleaming-puce-pullover.cyclic.app/product/addCategory", formData)
             .then((response) => {
                 notify()
             })

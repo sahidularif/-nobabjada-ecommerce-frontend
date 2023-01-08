@@ -1,19 +1,15 @@
 import React from "react";
-import headphone from "../../images/headphone-2.png";
-import { BsBagPlusFill, BsBagDashFill } from "react-icons/bs";
 import card from '../../images/verified.png';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Modal from 'react-bootstrap/Modal';
 import {
   useAppDispatch,
   useAppSelector,
 } from "../../redux/hooks/useTypeSelector";
 import { Product } from "../../redux/reducer/productSlice";
-import { addProductToCart, clearCart, removeProductFromCart } from "../../redux/reducer/cartSlice";
+import { addProductToCart, removeProductFromCart } from "../../redux/reducer/cartSlice";
 import { MdAddCircle,  MdArrowBack, MdClose, MdDelete, MdRemoveCircle, } from "react-icons/md";
 import { Link } from "react-router-dom";
 import '../../styles/checkout.css'
+
 const Cart = () => {
   const dispatch = useAppDispatch()
   const { products, totalPrice } = useAppSelector((state) => state.cart);
@@ -90,9 +86,9 @@ const Cart = () => {
                       <p className="price">1 x ${product.price}</p>
                       <div className="remove d-flex align-items-center justify-content-between" >
                         <div className="d-flex align-items-center">
-                          <MdRemoveCircle size={20} />&nbsp;
-                          <span>{0}</span>&nbsp;
-                          <MdAddCircle size={20} />
+                          <MdRemoveCircle onClick={()=> handleDecreaseProduct(product._id)} size={20} />&nbsp;
+                          <span>{product.price * product.quantity}</span>&nbsp;
+                          <MdAddCircle onClick={()=> handleIncreaseProduct(product)} size={20} />
                         </div>
                         <MdDelete onClick={()=> handleDeleteProduct(product._id)} />
                       </div>
@@ -125,7 +121,6 @@ const Cart = () => {
                 </div>
               </div>
             </div>
-            <button onClick={handleClearCart}>Clear cart</button>
           </div>
           
         )

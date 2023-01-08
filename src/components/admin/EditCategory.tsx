@@ -1,7 +1,4 @@
-import { FileHandle } from 'fs/promises';
-import React, { useState, useRef, ChangeEvent, LegacyRef } from 'react';
-// import altImg from '../../images/icons/fb.png';
-import { InputFiles } from 'typescript';
+import React from 'react';
 import { category } from '../../utilities/category.type';
 import Dropzone from './dropzone';
 import { Formik, Field, Form, ErrorMessage } from "formik";
@@ -12,7 +9,6 @@ import { useParams } from 'react-router-dom';
 const EditCategory = () => {
     const { id } = useParams()
     const [files, setFiles] = React.useState<File[]>([])
-    const [imgURL, setImgURL] = React.useState<string | ArrayBuffer | null>("")
     const [formField, setFormField] = React.useState<InitialType>({
         _id: "",
         categoryName: "",
@@ -31,7 +27,7 @@ const EditCategory = () => {
     }
 
     React.useEffect(() => {
-        axios.get(`http://localhost:5000/product/categories/${id}`)
+        axios.get(`https://gleaming-puce-pullover.cyclic.app/product/categories/${id}`)
             .then((res) => {
                 const data = res.data
                 urlToFile(data.image)
@@ -66,7 +62,7 @@ const EditCategory = () => {
         formData.append('categoryType', formValue.categoryType)
         formData.append('parentCategory', formValue.parentCategory)
 
-        axios.put(`http://localhost:5000/product/updateCategory/${formField._id}`, formData)
+        axios.put(`https://gleaming-puce-pullover.cyclic.app/product/updateCategory/${formField._id}`, formData)
             .then((response) => {
                 console.log(response);
             })

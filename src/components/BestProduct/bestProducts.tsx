@@ -1,9 +1,8 @@
 import React, { FC, } from "react";
 import Modal from "../modal/Modal";
-import { Product, TProduct, fetchProducts } from "../../redux/reducer/productSlice";
+import { Product, fetchProducts } from "../../redux/reducer/productSlice";
 import { useAppDispatch, useAppSelector,} from "../../redux/hooks/useTypeSelector";
 import { addProductToCart } from "../../redux/reducer/cartSlice";
-import { Link } from "react-router-dom";
 
 type CartItem = Product & {
   quantity: number;
@@ -14,7 +13,6 @@ type CartState = {
 };
 const BestProducts: FC = () => {
   const { loading, data } = useAppSelector((state) => state.product);
-  const { products } = useAppSelector((state) => state.cart);
   const [modalData, setModalData] = React.useState<Product>({
     _id: '',
     title: '',
@@ -35,7 +33,6 @@ const BestProducts: FC = () => {
 console.log(data)
   return (
     <section className="products section"
-    // onClick={handleOuterClick}
     onClick={(e)=>e.stopPropagation()}
     >      
       <div className="container">

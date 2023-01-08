@@ -1,9 +1,7 @@
 import React from "react";
 import { MdClose } from "react-icons/md";
 import "./modal.css";
-import storeItems from '../../data.json'
-import pd1 from '../../images/earphone.png'
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { TProduct } from "../../redux/reducer/productSlice";
 
 type PropsType = {

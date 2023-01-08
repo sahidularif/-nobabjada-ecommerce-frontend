@@ -3,9 +3,6 @@ import '../../styles/checkout.css'
 import Header from '../Header/header'
 import verified from '../../images/verified.png'
 import pd1 from '../../images/product/pd1.png'
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Modal from 'react-bootstrap/Modal';
 
 import { useAppSelector } from '../../redux/hooks/useTypeSelector'
 import PaymentGateway from '../checkout/checkout'
@@ -20,40 +17,6 @@ export default function Checkout() {
     return (
         <React.Fragment>
             <Header />
-            <>
-                {/* <Modal show={show} onHide={handleClose} centered>
-                    <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <Form>
-                            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                                <Form.Label>Email address</Form.Label>
-                                <Form.Control
-                                    type="email"
-                                    placeholder="name@example.com"
-                                    autoFocus
-                                />
-                            </Form.Group>
-                            <Form.Group
-                                className="mb-3"
-                                controlId="exampleForm.ControlTextarea1"
-                            >
-                                <Form.Label>Example textarea</Form.Label>
-                                <Form.Control as="textarea" rows={3} />
-                            </Form.Group>
-                        </Form>
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
-                            Close
-                        </Button>
-                        <Button variant="primary" onClick={handleClose}>
-                            Save Changes
-                        </Button>
-                    </Modal.Footer>
-                </Modal> */}
-            </>
             <div className="page-wrapper">
                 <div className="checkouts shopping">
                     <div className="constainer">
@@ -87,32 +50,7 @@ export default function Checkout() {
                                     </form>
                                 </div>
                                 <PaymentGateway/>
-                                {/* <div className="block card-form">
-                                    <h4 className="widget-title">Payment Method</h4>
-                                    
-                                    <p>Credit Cart Details (Secure payment)</p>
-                                    <div className="checkout-product-details">
-                                        <div className="payment">
-                                            <div className="card-details">
-                                                <form className="checkout-form">
-                                                    <div className="form-group">
-                                                        <label >Card Number <span className="required">*</span></label>
-                                                        <input id="card-number" className="form-control" type="tel" placeholder="•••• •••• •••• ••••" />
-                                                    </div>
-                                                    <div className="form-group half-width padding-right">
-                                                        <label >Expiry (MM/YY) <span className="required">*</span></label>
-                                                        <input id="card-expiry" className="form-control" type="tel" placeholder="MM / YY" />
-                                                    </div>
-                                                    <div className="form-group half-width padding-left">
-                                                        <label>Card Code <span className="required">*</span></label>
-                                                        <input id="card-cvc" className="form-control" type="tel" maxLength={4} placeholder="CVC" />
-                                                    </div>
-                                                    <a href="confirmation.html" className="btn btn-main mt-20">Place Order</a >
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> */}
+                          
                             </div>
                             <div className="col-md-4">
                                 <div className="product-checkout-details">
