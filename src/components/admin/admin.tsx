@@ -8,9 +8,10 @@ export type ChieldProps = {
 }
 const Admin = ({ chield }: ChieldProps) => {
     let location = useLocation();
+    let from = location.state?.from?.pathname || "/login";
     const { user } = useAppSelector((state) => state.auth)
     if (user && !user.isAdmin) {
-        return <Navigate to="/login" state={{ from: location }} replace />;
+        return <Navigate to={from} replace />;
     }
     return (
         <div className='admin-container'>

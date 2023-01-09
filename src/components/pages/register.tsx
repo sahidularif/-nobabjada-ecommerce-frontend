@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { register } from "../../redux/reducer/authSlices";
 import logo from '../../nobabjada-2.png';
 import {
@@ -16,6 +16,7 @@ const Register = () => {
   const { message } = useAppSelector((state) => state.message);
   const dispatch = useAppDispatch();
   const navigate = useNavigate()
+  const location = useLocation()
   useEffect(() => {
     dispatch(clearMessage());
     setSuccessful(false);
@@ -46,12 +47,11 @@ const Register = () => {
     setSuccessful(false);
 
     dispatch(register({ name, email, password }))
-      .unwrap()
       .then(() => {
         setSuccessful(true);
-        setTimeout(() => {
           navigate('/login')
-        }, 5000);
+          // <Navigate to="/login" />;
+       
       })
       .catch(() => {
         setSuccessful(false);

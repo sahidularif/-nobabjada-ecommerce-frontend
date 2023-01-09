@@ -7,7 +7,7 @@ export default function PrivateOutlet() {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
   let location = useLocation();
-  let from = location.state?.from?.pathname || "/";
+  let from = location.state?.from?.pathname || "/login";
   const { jwt } = useAppSelector(
     (state) => state.auth
   );
@@ -20,6 +20,7 @@ export default function PrivateOutlet() {
       })
       .catch(() => {
         <Navigate to="/login" state={{ from: location }} replace />;
+        // <Navigate to="/login" replace={true} />;
       })
 
   });
