@@ -31,7 +31,8 @@ interface ProductState {
 export const fetchProducts = createAsyncThunk("products/fetch", async () => {
   
   try {
-    const response = await axios.get('https://gleaming-puce-pullover.cyclic.app/product/getAllProduct');
+    const response = await axios.get('https://gleaming-puce-pullover.cyclic.app/product/getAllProduct/');
+    console.log(response.data)
     return response.data;
   } catch (error) {
     console.log('Error: ', error);
