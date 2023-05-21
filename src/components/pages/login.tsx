@@ -5,7 +5,7 @@ import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import logo from "../../nobabjada-2.png";
-import { google, login } from "../../redux/reducer/authSlices";
+import { google, loggin } from "../../redux/reducer/authSlices";
 import {
   useAppDispatch,
   useAppSelector,
@@ -46,7 +46,7 @@ const Login = () => {
   const handleLogin = (formValue: LoginUser) => {
     setSuccessful(false);
 
-    dispatch(login(formValue))
+    dispatch(loggin(formValue))
       .unwrap()
       .then(() => {
         setSuccessful(true);

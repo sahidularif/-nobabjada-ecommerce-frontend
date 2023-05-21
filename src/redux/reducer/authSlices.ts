@@ -5,7 +5,6 @@ import { DisplayUser } from "../models/DisplayUser.interface";
 import { NewUser } from "../models/NewUser";
 import { LoginUser } from "../models/LoginUser.interface";
 import { Jwt } from "../models/Jwt";
-
 const storedUser: string | null = localStorage.getItem('user');
 const user: DisplayUser | null = !!storedUser ? JSON.parse(storedUser) : null;
 
@@ -149,17 +148,17 @@ export const authSlice = createSlice({
         state.user = null;
       })
       // LOGIN
-      .addCase(login.pending, (state) => {
+      .addCase(loggin.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(login.fulfilled, (state, action) => {
+      .addCase(loggin.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
         state.jwt = action.payload.jwt;
         state.isAuthenticated = true;
         state.user = action.payload.user;
       })
-      .addCase(login.rejected, (state) => {
+      .addCase(loggin.rejected, (state) => {
         state.isLoading = false;
         state.isError = true;
         state.user = null;
