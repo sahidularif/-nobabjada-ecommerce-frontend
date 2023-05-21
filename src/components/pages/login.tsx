@@ -26,7 +26,7 @@ const Login = () => {
     dispatch(clearMessage());
   }, [dispatch]);
   useEffect(() => {
-    if (user) navigate('/')
+    if (user) navigate('/dashboard')
 
   }, []);
 
@@ -47,13 +47,15 @@ const Login = () => {
     setSuccessful(false);
 
     dispatch(login(formValue))
+      .unwrap()
       .then(() => {
         setSuccessful(true);
         setTimeout(() => {
           navigate(from, { replace: true });
         }, 1000);
       })
-      .catch(() => {
+      .catch((err) => {
+        console.log(err)
         setSuccessful(false);
         <Navigate to="/login" state={{ from: location }} replace />;
       });

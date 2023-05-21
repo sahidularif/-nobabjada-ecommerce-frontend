@@ -4,7 +4,7 @@ import smartwatch from "../../images/smartwatch.png";
 const SummerSale = () => {
   return (
     <div className="container">
-      <div className="wrapper bg-primary-300">
+      <div className="wrapper bg-neutral-100">
         <div className="summer-heading">
           <div className="heading_body">
             <h6>20 % OFF</h6>

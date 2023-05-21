@@ -49,9 +49,9 @@ const Register = () => {
     dispatch(register({ name, email, password }))
       .then(() => {
         setSuccessful(true);
-          navigate('/login')
-          // <Navigate to="/login" />;
-       
+        navigate('/login')
+        // <Navigate to="/login" />;
+
       })
       .catch(() => {
         setSuccessful(false);
@@ -75,7 +75,7 @@ const Register = () => {
             </div>
           )}
           <span className="login100-form-title p-b-53 mb-2">
-            <Link to="/"><img src={logo} alt="logo" className="img-fluid"/></Link>
+            <Link to="/"><img src={logo} alt="logo" className="img-fluid" /></Link>
             Create your account
           </span>
           <Formik
@@ -83,85 +83,85 @@ const Register = () => {
             validationSchema={validationSchema}
             onSubmit={handleRegister}
           >
-          
-              <Form className="login100-form validate-form flex-sb flex-w">
-                <React.Fragment>
-                  <div className="p-t-31 p-b-9">
-                    <span className="txt1">Name</span>
-                  </div>
-                  <div className="wrap-input100 validate-input">
-                    <Field className="input100" type="text" name="name" />
-                    <span className="focus-input100"></span>
-                  </div>
-                  <ErrorMessage
-                    name="name"
-                    component="div"
-                    className="alert wrap-msg"
-                  />
-                  {/* Email field */}
-                  <div className="p-t-31 p-b-9">
-                    <span className="txt1">Email</span>
-                  </div>
-                  <div className="wrap-input100 validate-input">
-                    <Field className="input100" type="email" name="email" />
-                    <span className="focus-input100"></span>
-                  </div>
-                  <ErrorMessage
-                    name="email"
-                    component="div"
-                    className="alert wrap-msg"
-                  />
-                  {/* Password field */}
-                  <div className="p-t-13 p-b-9">
-                    <span className="txt1">Password</span>
-                  </div>
-                  <div className="wrap-input100 validate-input">
-                    <Field
-                      className="input100"
-                      type="password"
-                      name="password"
-                    />
-                    <span className="focus-input100"></span>
-                  </div>
-                  <ErrorMessage
-                    name="password"
-                    component="div"
-                    className="alert wrap-msg"
-                  />
-                  {/* Confirm password field */}
-                  <div className="p-t-13 p-b-9">
-                    <span className="txt1">Confirm Password</span>
-                  </div>
-                  <div className="wrap-input100 validate-input">
-                    <Field
-                      className="input100"
-                      type="password"
-                      name="confirmPassword"
-                    />
-                    <span className="focus-input100"></span>
-                  </div>
-                  <ErrorMessage
-                    name="confirmPassword"
-                    component="div"
-                    className="alert wrap-msg"
-                  />
 
-                  <div className="container-login100-form-btn m-t-17">
-                    <button type="submit" className="login100-form-btn">
-                      Sign Up
-                    </button>
-                  </div>
-                </React.Fragment>
-
-                <div className="w-full text-center p-t-55 toggle-form">
-                  <span className="txt2">Already have an account?</span>
-                  &nbsp;
-                  <Link to="/login" className="txt2 bo1">
-                    Login
-                  </Link>
+            <Form className="login100-form validate-form flex-sb flex-w">
+              <React.Fragment>
+                <div className="p-t-31 p-b-9">
+                  <span className="txt1">Name</span>
                 </div>
-              </Form>
-         
+                <div className="wrap-input100 validate-input">
+                  <Field className="input100" type="text" name="name" />
+                  <span className="focus-input100"></span>
+                </div>
+                <ErrorMessage
+                  name="name"
+                  component="div"
+                  className="alert wrap-msg"
+                />
+                {/* Email field */}
+                <div className="p-t-31 p-b-9">
+                  <span className="txt1">Email</span>
+                </div>
+                <div className="wrap-input100 validate-input">
+                  <Field className="input100" type="email" name="email" />
+                  <span className="focus-input100"></span>
+                </div>
+                <ErrorMessage
+                  name="email"
+                  component="div"
+                  className="alert wrap-msg"
+                />
+                {/* Password field */}
+                <div className="p-t-13 p-b-9">
+                  <span className="txt1">Password</span>
+                </div>
+                <div className="wrap-input100 validate-input">
+                  <Field
+                    className="input100"
+                    type="password"
+                    name="password"
+                  />
+                  <span className="focus-input100"></span>
+                </div>
+                <ErrorMessage
+                  name="password"
+                  component="div"
+                  className="alert wrap-msg"
+                />
+                {/* Confirm password field */}
+                <div className="p-t-13 p-b-9">
+                  <span className="txt1">Confirm Password</span>
+                </div>
+                <div className="wrap-input100 validate-input">
+                  <Field
+                    className="input100"
+                    type="password"
+                    name="confirmPassword"
+                  />
+                  <span className="focus-input100"></span>
+                </div>
+                <ErrorMessage
+                  name="confirmPassword"
+                  component="div"
+                  className="alert wrap-msg"
+                />
+
+                <div className="container-login100-form-btn m-t-17">
+                  <button type="submit" className="login100-form-btn">
+                    Sign Up
+                  </button>
+                </div>
+              </React.Fragment>
+
+              <div className="w-full text-center p-t-55 toggle-form">
+                <span className="txt2">Already have an account?</span>
+                &nbsp;
+                <Link to="/login" className="txt2 bo1">
+                  Login
+                </Link>
+              </div>
+            </Form>
+
           </Formik>
         </div>
       </div>

@@ -37,7 +37,7 @@ function App() {
           <Route path="checkout-success" element={<CheckoutSuccess />} />
           <Route path="checkout" element={<Checkout />} />
           <Route path="dashboard" element={<PrivateOutlet />}>
-            <Route path="/dashboard" element={<Admin chield={<Details />} />} />
+            <Route path="" element={<Admin chield={<Details />} />} />
             <Route path="articles" element={<Admin chield={<Article />} />} />
             <Route path="products" element={<Admin chield={<Products />} />} />
             <Route path="orders" element={<Admin chield={<Orders />} />} />

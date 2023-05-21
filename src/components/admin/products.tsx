@@ -7,6 +7,7 @@ import { authHeader } from "../../redux/auth/authHeader";
 // import Swal from 'sweetalert2'
 import axios from "axios";
 import { category } from '../../utilities/category.type';
+import Swal from "sweetalert2";
 
 interface IProduct {
   _id: number | null;
@@ -66,42 +67,42 @@ function Products() {
       }
     });
   }
-  // const handleCategoryDelete = (id: string) => {
-  //   Swal.fire({
-  //     title: 'Are you sure?',
-  //     text: "You won't be able to revert this!",
-  //     icon: 'warning',
-  //     showCancelButton: true,
-  //     confirmButtonColor: '#3085d6',
-  //     cancelButtonColor: '#d33',
-  //     confirmButtonText: 'Yes, delete it!'
-  //   }).then((result) => {
-  //     if (result.isConfirmed) {
-  //       axios.delete(`http://localhost:5000/product/deleteCategory/${id}`)
-  //         .then((res) => {
-  //           setSuccess(true)
-  //           if (res.status === 200) {
+  const handleCategoryDelete = (id: string) => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios.delete(`https://gleaming-puce-pullover.cyclic.app/product/deleteCategory/${id}`)
+          .then((res) => {
+            setSuccess(true)
+            if (res.status === 200) {
 
-  //             Swal.fire(
-  //               'Deleted!',
-  //               'Your category has been deleted.',
-  //               'success'
-  //             )
-  //             // window.location.reload()
-  //           }
-  //         })
-  //         .catch((err) => {
-  //           setSuccess(false)
-  //           Swal.fire(
-  //             'Cancelled',
-  //             'Your category is not deleted',
-  //             'error'
-  //           )
-  //         })
-  //     }
-  //   })
+              Swal.fire(
+                'Deleted!',
+                'Your category has been deleted.',
+                'success'
+              )
+              // window.location.reload()
+            }
+          })
+          .catch((err) => {
+            setSuccess(false)
+            Swal.fire(
+              'Cancelled',
+              'Your category is not deleted',
+              'error'
+            )
+          })
+      }
+    })
 
-  // }
+  }
   if (!isLoaded) {
     return <>loading...</>;
   } else {
@@ -177,7 +178,7 @@ function Products() {
                             <Link to={'edit/' + item?._id}><FaRegEdit size={20} /></Link>
                             <span>
                               <VscTrash size={20} 
-                              // onClick={() => handleCategoryDelete(item._id)} 
+                              onClick={() => handleCategoryDelete(item._id)} 
                               />
                             </span>
                           </td>

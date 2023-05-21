@@ -1,6 +1,7 @@
 import React from "react";
 import "../../styles/style.css";
 import logo from "../../nobabjada.png";
+import user from "../../images/user_icon.png";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { MdClose } from "react-icons/md";
 import { CgShoppingCart } from "react-icons/cg";
@@ -29,13 +30,13 @@ const Header = () => {
   const [toggleMenu, setToggleMenu] = React.useState(false);
   const [toggleCart, setToggleCart] = React.useState(false);
   const [isAuthenticated, setIsAuthenticated] = React.useState(false);
- 
+  const [togleUserDropdownd, setToggleUserDorpdown] = React.useState(false)
 
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   // const dispatch = useAppDispatch();
   const { products, totalPrice } = useAppSelector((state) => state.cart);
-  // console.log(products)
+  // console.log(isAuthenticated)
   React.useEffect(() => {
     const storedJwt: string | null = localStorage.getItem("jwt");
     if (storedJwt !== null) {
@@ -60,10 +61,6 @@ const Header = () => {
             </li>
             <li>
               {" "}
-              <a href="#">About Us</a>{" "}
-            </li>
-            <li>
-              {" "}
               <a href="#">Blog</a>{" "}
             </li>
             <li>
@@ -73,25 +70,8 @@ const Header = () => {
           </ul>
         </nav>
         <div className="secondary-nav" id="secondary-navigation">
-          <ul aria-label="Secondary" role="list" className="secondary-nav_list">
-            <li className="log-logout">
-              {!isAuthenticated ? (
-                <Link to="/login">
-                  <button className="signin_button">Signin</button>
-                </Link>
-              ) : (
-                <button
-                  className="signin_button"
-                  onClick={() => {
-                    setToggleCart(true)
-                    dispatch(logout());
-                    window.location.reload();
-                  }}
-                >
-                  Logout
-                </button>
-              )}
-            </li>
+          <ul aria-label="Secondary" role="list" className="secondary-nav_list app__navbar-login g-0">
+         
             <li className="dropdown search dropdown-slide">
               <a
                 href="#!"
@@ -112,6 +92,28 @@ const Header = () => {
                 </li>
               </ul>
             </li>
+            {
+                    isAuthenticated ? 
+                    (
+                      <li className="app_home_user_icon">
+                          <img src={user} alt="user" onClick={()=> setToggleUserDorpdown(!togleUserDropdownd)} className='app-user-profile' />
+                          <ul className={`${togleUserDropdownd ? 'activeDropdown' : 'deactiveDropdown'}`}>
+                              <li className="sub-item">
+                                  <span className="material-icons-outlined"> grid_view </span>
+                                <a href="/dashboard">Dashboard</a>
+                              </li>
+                              <li className="sub-item">
+                                  <span className="material-icons-outlined"> logout </span>
+                                  <p onClick={()=> dispatch(logout)}>Logout</p>
+                              </li>
+                          </ul>
+                      </li>
+                  )
+                    :
+                    (
+                      <span className="auth-link"><a href="/login">Sign in</a></span>
+                    )  
+                }
             <li>
               {" "}
               <div className="header-icon">
@@ -121,7 +123,7 @@ const Header = () => {
                     size={30}
                     onClick={() => {
                       setToggleCart(true)
-                      
+
                     }}
                   />
                   <span style={{ color: "#fff" }}>{products.length}</span>
@@ -154,6 +156,7 @@ const Header = () => {
                 )}
               </div>
             </li>
+           
           </ul>
           <div className="app__navbar-smallscreen">
             <HiMenuAlt3
@@ -200,7 +203,7 @@ const Header = () => {
             )}
           </div>
         </div>
-       
+
         {/* Same as */}
         {/* <Modal 
         open={openModal} 

@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk,} from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, } from "@reduxjs/toolkit";
 import { setMessage } from "./messages";
 import authService from "./auth.service";
 import { DisplayUser } from "../models/DisplayUser.interface";
@@ -103,8 +103,15 @@ export const verifyJwt = createAsyncThunk(
   async (jwt: string, thunkAPI) => {
     try {
       return await authService.verifyJwt(jwt);
-    } catch (error) {
-      return thunkAPI.rejectWithValue('Unable to verify');
+    } catch (error: any) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      thunkAPI.dispatch(setMessage('User not valid'));
+      return thunkAPI.rejectWithValue('User not valid');
     }
   }
 );
@@ -172,7 +179,7 @@ export const authSlice = createSlice({
       .addCase(verifyJwt.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.isAuthenticated = action.payload;
+        state.isAuthenticated = true;
       })
       .addCase(verifyJwt.rejected, (state) => {
         state.isLoading = false;

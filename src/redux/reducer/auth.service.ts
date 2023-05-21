@@ -10,7 +10,7 @@ import { NewUser } from '../models/NewUser';
 
 //Base Url
 // const API_URL = "https://gleaming-puce-pullover.cyclic.app/auth/"
-const API_URL = "https://gleaming-puce-pullover.cyclic.app/auth/"
+const API_URL = "http://localhost:5000/auth/"
 
 // User Registration
 const register = async (newUser: NewUser): Promise<DisplayUser | null> => {
@@ -23,16 +23,17 @@ const register = async (newUser: NewUser): Promise<DisplayUser | null> => {
 // User Login
 const login = async (user: LoginUser): Promise<{ jwt: Jwt; user: DisplayUser | null }> => {
   const response = await axios.post(API_URL + "login", user);
-
+  const token = {token: response.data.token}
   if (response.data) {
-    localStorage.setItem('jwt', JSON.stringify(response.data.token));
+    
+    localStorage.setItem('jwt', JSON.stringify(token));
     // console.log(response.data)
     const decodedJwt: DecodedJwt = jwt_decode(response.data.token);
     // console.log(decodedJwt)
     localStorage.setItem('user', JSON.stringify(decodedJwt.user));
     return { jwt: response.data.token, user: decodedJwt.user };
   }
-  return { jwt: response.data, user: null };
+  return { jwt: token, user: null };
 };
 
 
@@ -76,7 +77,7 @@ const logout = (): void => {
 // Jwt Verification
 const verifyJwt = async (jwt: string): Promise<boolean> => {
   const response = await axios.post(
-    `API_URL/verify-jwt`,
+    API_URL + "verify-jwt",
     { jwt }
   );
 

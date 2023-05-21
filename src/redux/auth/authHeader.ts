@@ -5,8 +5,9 @@ export function authHeader() {
         token = JSON.parse(jwt);
 
     if (token) {
-        return { 'x-access-token': token };
+        // console.log(token)
+        return { 'Authorization': `Bearer ${token.token}` };
     } else {
-        return { 'x-access-token': null };
+        return { 'Authorization': 'null' };
     }
 }

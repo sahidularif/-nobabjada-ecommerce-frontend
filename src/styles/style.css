@@ -220,7 +220,15 @@ svg {
   color: var(--clr-neutral-100);
   font-weight: var(--fw-semi-bold);
 }
-
+.p__opensans {
+  font-family: var(--font-alt);
+  color: var(--color-white);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: capitalize;
+  line-height: 28px;
+  font-size: var(--normal-font-size);
+}
 .fs-lge-heading {
   font-size: var(--fs-lge-heading);
   line-height: 100px;
@@ -353,7 +361,15 @@ svg {
   align-items: center;
   margin: 0px auto;
 }
-
+.deactiveDropdown{
+  display: none;
+}
+.activeDropdown{
+  background-color: snow;
+  top: 70px;
+  position: fixed;
+  right: 0;
+}
 .app__navbar-smallscreen {
   display: none;
 }
@@ -375,7 +391,61 @@ svg {
 .dropdown-slide {
   position: static;
 }
+.app__navbar-login {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+/* .app-user-profile {
+  height: 3rem;
+  width: auto;
+  cursor: pointer;
+} */
+.app-user-profile {
+  height: 2rem;
+  width: auto;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: white;
+}
+.sub-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.725rem;
+  cursor: pointer;
+  padding: 0.2rem 1.5rem;
+}
 
+.sub-item:hover {
+  background-color: rgba(232, 232, 232, 0.4);
+}
+
+.sub-item:hover .material-icons-outlined {
+  color: #ff9800;
+  transform: scale(1.08) translateY(-2px);
+  cursor: pointer;
+}
+
+.sub-item:hover p {
+  color: #000;
+  cursor: pointer;
+}
+
+.sub-item p {
+  font-size: 0.85rem;
+  color: #888888;
+  font-weight: 500;
+  margin: 0.4rem 0;
+  flex: 1;
+}
+.sub-item:hover .material-icons-outlined {
+  color: #ff9800;
+  transform: scale(1.08) translateY(-2px);
+  cursor: pointer;
+}
 .dropdown-slide:hover .dropdown-menu {
   z-index: 999;
   display: none;
@@ -488,7 +558,9 @@ svg {
   gap: clamp(var(--size-400), 5vw, var(--size-700));
   font-weight: var(--fw-regular);
 }
-
+.auth-link a{
+  color: white !important;
+}
 .secondary-nav {
   display: flex;
   justify-content: space-between;
@@ -1384,7 +1456,9 @@ svg {
   .app__navbar-smallscreen {
     display: none;
   }
-
+  /* .app__navbar-login {
+    display: none;
+} */
   /* .hero-wrapper {
     width: auto;
     margin: 0 auto;

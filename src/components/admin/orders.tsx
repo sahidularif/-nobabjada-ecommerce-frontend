@@ -6,19 +6,20 @@ import Tabs from "../tabComponents/tabs";
 import Order from "./order";
 import { useNavigate } from "react-router-dom";
 import { OrderInterface } from "../../redux/models/OrderInterface";
+const API_URL = "http://localhost:5000/product/getAllOrder"
 const Orders = () => {
     const [orders, setOrders] = React.useState<OrderInterface[]>([])
     const navigate = useNavigate()
 
     React.useEffect(() => {
-        axios.get(`https://gleaming-puce-pullover.cyclic.app/product/getAllOrder`, { headers: authHeader() })
+        axios.get(API_URL, { headers: authHeader() })
             .then((res) => {
                 if (res.data) {
                     setOrders(res.data)
                 }
             })
             .catch((err) => {
-                if (err.response.status == '403')
+                if (err.response.status == '401')
                     navigate('/login')
                 console.log(err);
 

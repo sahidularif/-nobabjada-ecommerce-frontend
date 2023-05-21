@@ -11,18 +11,22 @@ export default function PrivateOutlet() {
   const { jwt } = useAppSelector(
     (state) => state.auth
   );
-  React.useEffect(() => {
-    if (!jwt || !jwt?.token) return;
+  // console.log(jwt)
 
-    dispatch(verifyJwt(jwt.token))
-      .then(() => {
-        navigate(from, { replace: true });
-      })
-      .catch(() => {
-        <Navigate to="/login" state={{ from: location }} replace />;
-        // <Navigate to="/login" replace={true} />;
-      })
+  // React.useEffect(() => {
+  //   if (!jwt || !jwt?.token) return;
 
-  });
+  //   dispatch(verifyJwt(jwt.token))
+  //     .then(({ payload }) => {
+  //       console.log(payload)
+  //       navigate(from, { replace: true });
+  //     })
+  //     .catch((err) => {
+  //       console.log(err)
+  //       // <Navigate to="/login" state={{ from: location }} replace />;
+  //       // <Navigate to="/login" replace={true} />;
+  //     })
+
+  // }, [0]);
   return jwt ? <Outlet /> : <Navigate to="/login" state={{ from: location }} replace />;
 }

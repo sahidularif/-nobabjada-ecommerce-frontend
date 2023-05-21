@@ -4,26 +4,33 @@ import { useNavigate } from "react-router-dom"
 import { authHeader } from "../../redux/auth/authHeader"
 import { OrderInterface } from "../../redux/models/OrderInterface"
 import { Table } from "react-bootstrap"
-
+import { useAppDispatch } from "../../redux/hooks/useTypeSelector"
+import { logout } from "../../redux/reducer/authSlices"
+// const API_URL = "https://gleaming-puce-pullover.cyclic.app/auth/"
+const API_URL = "http://localhost:5000/product/getAllOrder"
 export default function LatestOrder() {
     const [orders, setOrders] = React.useState<OrderInterface[]>([])
     const navigate = useNavigate()
-
+    const dispatch = useAppDispatch()
     React.useEffect(() => {
-        axios.get(`https://gleaming-puce-pullover.cyclic.app/product/getAllOrder`, { headers: authHeader() })
+        axios.get(API_URL, { headers: authHeader() })
             .then((res) => {
+                console.log(res)
                 if (res.data) {
+
                     setOrders(res.data)
                 }
-            })
+         })
             .catch((err) => {
-                if (err.response.status == '403')
+                if (err.response.status == '401') {
+                    console.log(err);
+                    dispatch(logout())
                     navigate('/login')
-                console.log(err);
-
+                    
+                }
             })
     })
-
+    console.log('data')
     return (
         <>
             <Table striped hover>
