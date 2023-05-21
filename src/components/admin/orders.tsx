@@ -6,7 +6,8 @@ import Tabs from "../tabComponents/tabs";
 import Order from "./order";
 import { useNavigate } from "react-router-dom";
 import { OrderInterface } from "../../redux/models/OrderInterface";
-const API_URL = "http://localhost:5000/product/getAllOrder"
+const API_URL = "https://gleaming-puce-pullover.cyclic.app/product/getAllOrder/"
+// const API_URL = "http://localhost:5000/product/getAllOrder"
 const Orders = () => {
     const [orders, setOrders] = React.useState<OrderInterface[]>([])
     const navigate = useNavigate()

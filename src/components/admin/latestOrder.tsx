@@ -6,8 +6,8 @@ import { OrderInterface } from "../../redux/models/OrderInterface"
 import { Table } from "react-bootstrap"
 import { useAppDispatch } from "../../redux/hooks/useTypeSelector"
 import { logout } from "../../redux/reducer/authSlices"
-// const API_URL = "https://gleaming-puce-pullover.cyclic.app/auth/"
-const API_URL = "http://localhost:5000/product/getAllOrder"
+const API_URL = "https://gleaming-puce-pullover.cyclic.app/product/getAllOrder/"
+// const API_URL = "http://localhost:5000/product/getAllOrder"
 export default function LatestOrder() {
     const [orders, setOrders] = React.useState<OrderInterface[]>([])
     const navigate = useNavigate()
